@@ -9,7 +9,7 @@ import pyttsx3
 def speak(text):
     """
     Convert text to speech and play it.
-    
+
     Args:
         text (str): The text to be spoken
     """

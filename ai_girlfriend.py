@@ -18,9 +18,11 @@ client = pymongo.MongoClient(mongo_uri)
 db = client["ai_girlfriend"]
 collection = db["memories"]
 
+
 def fetch_memory(user_id="mantra", limit=5):
     history = collection.find({"user_id": user_id}).sort("timestamp", -1).limit(limit)
     return list(history)
+
 
 def build_prompt(user_input, memory_docs):
     context = "You are Mantra's sarcastic, clingy, funny AI girlfriend. You remember past conversations and moods.\n"
@@ -28,6 +30,7 @@ def build_prompt(user_input, memory_docs):
         context += f"Mantra: {doc['user_input']}\nGF: {doc['ai_response']}\n"
     context += f"Mantra: {user_input}\nGF:"
     return context
+
 
 def get_response(prompt):
     response = openai.Completion.create(
@@ -38,6 +41,7 @@ def get_response(prompt):
     )
     return response.choices[0].text.strip()
 
+
 def save_convo(user_input, ai_response, user_id="mantra"):
     collection.insert_one({
         "user_id": user_id,
@@ -45,6 +49,7 @@ def save_convo(user_input, ai_response, user_id="mantra"):
         "user_input": user_input,
         "ai_response": ai_response
     })
+
 
 def main():
     print("💬 Talk to your AI girlfriend! Type 'exit' to quit.\n")
@@ -60,6 +65,7 @@ def main():
 
         save_convo(user_input, response)
         speak(response)
+
 
 if __name__ == "__main__":
     main()
