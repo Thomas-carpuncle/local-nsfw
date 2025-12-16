@@ -77,7 +77,16 @@ if [ ! -f ".env" ]; then
         echo "Do you want to edit .env now? (y/n)"
         read -r response
         if [[ "$response" =~ ^[Yy]$ ]]; then
-            ${EDITOR:-nano} .env
+            # Use safe default editor
+            if command -v nano &> /dev/null; then
+                nano .env
+            elif command -v vim &> /dev/null; then
+                vim .env
+            elif command -v vi &> /dev/null; then
+                vi .env
+            else
+                echo "No suitable editor found. Please edit .env manually."
+            fi
         fi
     else
         echo -e "${YELLOW}⚠ .env.example not found, creating basic .env${NC}"

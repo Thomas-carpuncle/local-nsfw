@@ -4,9 +4,10 @@
 
 model_list:
   # Local models via Nexa SDK or Ollama
+  # Note: Ensure your local model server is running on localhost:8080
   - model_name: llama3-local
     litellm_params:
-      model: openai/llama3-uncensored
+      model: openai/llama3-uncensored  # Use openai/ prefix for OpenAI-compatible endpoints
       api_base: http://localhost:8080/v1
       api_key: dummy  # Not required for local models
     model_info:

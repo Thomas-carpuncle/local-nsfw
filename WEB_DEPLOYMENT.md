@@ -80,8 +80,8 @@ sudo usermod -aG docker $USER
 sudo apt install docker-compose -y
 
 # 4. Clone repository
-git clone https://github.com/Thomas-carpuncle/local-nsfw.git
-cd local-nsfw
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
 
 # 5. Configure environment
 cp .env.example .env
