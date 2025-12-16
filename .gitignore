@@ -1,5 +1,18 @@
 # Environment variables
 .env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.p12
+secrets/
+credentials/
+config/secrets/
+
+# LiteLLM configuration (may contain API keys)
+litellm_config.yaml
+!litellm_config.yaml.example
 
 # Python
 __pycache__/
