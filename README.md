@@ -11,6 +11,13 @@ Key features include:
 * Built in model switcher
 * Selection of uncensored language models at [Nexa Model Hub](https://nexa.ai/models?tasks=Uncensored) with RAM and disk size suggestions
 
+## Quick Start
+
+**For the fastest setup**, see [QUICK_START.md](QUICK_START.md) or run:
+```bash
+./setup.sh
+```
+
 ## Installation
 
 ### Prerequisites
@@ -64,10 +71,16 @@ Follow the on-screen instructions to start chatting with the default model or sw
 
 ## Additional Documentation
 
+### Getting Started
+- **[QUICK_START.md](QUICK_START.md)** - 🚀 Get running in 5 minutes
+
+### Security & Deployment
 - **[SECURITY_ADVISORY.md](SECURITY_ADVISORY.md)** - ⚠️ Critical security information and best practices
 - **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Comprehensive deployment options (local, cloud, Docker)
 - **[WEB_DEPLOYMENT.md](WEB_DEPLOYMENT.md)** - Web service deployment with security and authentication
 - **[CLOUD_SETUP_SUMMARY.md](CLOUD_SETUP_SUMMARY.md)** - Cloud integration guide and architecture overview
+
+### Features
 - **[AI_GIRLFRIEND_README.md](AI_GIRLFRIEND_README.md)** - AI girlfriend chatbot specific features
 
 ### Quick Setup
